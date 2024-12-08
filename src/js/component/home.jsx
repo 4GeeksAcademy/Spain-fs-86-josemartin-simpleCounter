@@ -3,6 +3,17 @@ import Swal from 'sweetalert2'
 
 const Home = () => {
 	const [count, setCount] = useState(10);
+
+	const buttonReset = (count) => {
+		return Swal.fire({
+			title: "!!El fin del mundo es inevitable¡¡",
+			imageUrl: "https://www.freememegenerator.org/uploads/galeria/meme-5-homer-simpson-pane-gerador-de-memes.jpg",
+			imageWidth: 400,
+			imageHeight: 300,
+			text: "En realidad no supe cómo hacerlo 🥲",
+			imageAlt: "Custom image"
+		  });
+	}
 	
 	useEffect( () => {
 		if(count === 0){
@@ -17,7 +28,7 @@ const Home = () => {
 				color: "#f0f2f2",
 				background: "url(https://www.cdc.gov/radiation-emergencies/media/images/2024/04/radioactive-hazard.jpg)",
 			  });
-		};
+			};
 		setTimeout(() => setCount((count) => count - 1), 1000 );
 	}, [count]);
 
@@ -27,6 +38,7 @@ const Home = () => {
 				<p><strong>Quedan {count} segundos para el fin del mundo </strong><i class="fa-solid fa-hourglass-end"></i></p>
 			</div>
 		</body>
+		<button onClick={buttonReset} className="button" >Pulse para resetear</button>
 	</>);
 };
 
